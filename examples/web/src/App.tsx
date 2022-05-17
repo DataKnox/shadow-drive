@@ -1,6 +1,7 @@
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
 import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
 import { WalletModalProvider, WalletMultiButton } from '@solana/wallet-adapter-react-ui';
+
 import {
 	GlowWalletAdapter,
 	PhantomWalletAdapter,
@@ -9,14 +10,18 @@ import {
 	TorusWalletAdapter,
 } from '@solana/wallet-adapter-wallets';
 import { clusterApiUrl } from '@solana/web3.js';
-import React, { FC, ReactNode, useMemo } from 'react';
+import React, { FC, ReactNode, useMemo, useState } from 'react';
 import Drive from './Drive';
+import ShdwDrive from "@shadow-drive/sdk";
+import { AnchorWallet, useAnchorWallet, useConnection } from "@solana/wallet-adapter-react";
+import Upload from './Upload';
 
 export const App: FC = () => {
 	return (
 		<Context>
 			<Content />
-			<Drive></Drive>
+			<Drive ></Drive>
+			<Upload></Upload>
 		</Context>
 	);
 };
