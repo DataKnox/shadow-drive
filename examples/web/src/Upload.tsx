@@ -9,7 +9,6 @@ export default function Upload() {
     const wallet = useAnchorWallet();
     return (
         <div>
-
             <form onSubmit={async event => {
                 event.preventDefault()
                 const drive = await new ShdwDrive(connection, wallet as AnchorWallet).init();
@@ -26,11 +25,10 @@ export default function Upload() {
 
                 const upload = await drive.uploadFile(acc, fd);
                 console.log(upload);
-            }
-
-            }>
-                <h1>React File Upload</h1>
+            }}>
+                <h1>Shadow Drive File Upload</h1>
                 <input type="file" onChange={e => setFile(e.target.files[0])} />
+                <br />
                 <button type="submit">Upload</button>
             </form>
         </div>
