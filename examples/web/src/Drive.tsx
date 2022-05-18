@@ -11,8 +11,8 @@ export default function Drive() {
 			if (wallet?.publicKey) {
 				const drive = await new ShdwDrive(connection, wallet as AnchorWallet).init();
 				const accounts = await drive.getStorageAccounts();
-
-				if (!accounts) {
+				console.log(accounts)
+				if (!accounts[0]) {
 					const storage = await drive.createStorageAccount('my-test-storage', '1MB');
 					const accounts = await drive.getStorageAccounts();
 				}
