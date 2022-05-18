@@ -12,14 +12,16 @@ import Upload from './Upload';
 
 export const App: FC = () => {
 	return (
-		<Context>
-			<p></p>
-			<Content />
-			<p></p>
-			<Drive ></Drive>
-			<p></p>
-			<Upload></Upload>
-		</Context>
+		<div>
+			<Context>
+				<p></p>
+				<Content />
+				<p></p>
+				<Drive ></Drive>
+				<p></p>
+				<Upload></Upload>
+			</Context>
+		</div>
 	);
 };
 
